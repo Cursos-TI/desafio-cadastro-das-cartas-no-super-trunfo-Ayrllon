@@ -11,30 +11,44 @@ int main()
     // Sugestão: Defina variáveis separadas para cada atributo da cidade.
     // Exemplos de atributos: código da cidade, nome, população, área, PIB, número de pontos turísticos.
 
-    char pais[25];
+     char pais[25];
     char estado;
     int cidade, pontosTuristicos;
-    float populacao, area, pib;
+    float populacao, area, pib, perCapita, densidadePopu;
 
     printf("Qual será seu pais?\n");
     scanf("%s", &pais);
 
-    printf("Escolha seu Estado de A a H\n");
+    printf("Qual será o seu estado de A a H\n");
     scanf(" %c", &estado);
 
-    printf("qual sera a sua cidade de 1 a 4?\n");
+
+    printf("Qual será a sua cidade de 1 a 4\n");
     scanf("%d", &cidade);
 
-    printf("Quanto é a população e área da sua cidade?\n");
+    printf("Quanto é a população é a área da cidade?\n");
     scanf("%f %f", &populacao, &area);
 
-    printf("Quanto é o PIB é os pontos turisticos da cídade? \n");
-    scanf("%f %i", &pib, &pontosTuristicos);
+    printf("Quanto é o PIB é os pontos turisticos da cidade?\n");
+    scanf("%f %d", &pib, &pontosTuristicos);
 
-    printf("Pais escolhido foi %s\n", pais);
-    printf("Sua carta é %c0%d \n", estado, cidade);
-    printf("Com de população: %f - Área: %f\n", populacao, area);
-    printf("PIB: %f - Número de pontos turísticos: %i\n", pib, pontosTuristicos);
+    perCapita = (pib / populacao);
+    densidadePopu = (populacao / area);
+
+    printf("**** RESULTADO ****\n");
+    printf("Pais escolhido foi o %s\n", pais);
+
+    printf("Sua carta é a %c0%d\n",estado, cidade);
+
+    printf("Com a população de: %.4f Milhões - Área de: %.4f km²\n", populacao, area);
+
+    printf("PIB: %.4f Milhões - Número de pontos turísticos: %d\n", pib, pontosTuristicos);
+
+    printf("Com PIB per Capita de: %.4f\n", perCapita);
+    printf("Com dencidade populacional de: %.4f\n", densidadePopu);
+
+
+
 
     // Cadastro das Cartas:
     // Sugestão: Utilize a função scanf para capturar as entradas do usuário para cada atributo.
